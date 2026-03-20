@@ -1,8 +1,9 @@
 from rest_framework import routers
-from .api import projectViewSet
+from .views import ProjectViewSet # Solo importamos desde views
 
 router = routers.DefaultRouter()
 
-router.register('api/projects', projectViewSet, 'projects')
+# Asegúrate de usar ProjectViewSet (con P mayúscula)
+router.register('api/projects', ProjectViewSet, 'projects')
 
 urlpatterns = router.urls
